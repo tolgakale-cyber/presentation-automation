@@ -1,0 +1,92 @@
+{
+  "title": "From Prompt to Presentation",
+  "subtitle": "A modular AI workflow for turning raw inputs into meeting-ready decks",
+  "audience": "Technical and business stakeholders",
+  "goal": "Demonstrate the presentation automation architecture",
+  "slides": [
+    {
+      "id": "01",
+      "title": "Presentation work is a pipeline, not a single prompt",
+      "key_message": "Separating research, narrative, QA and rendering makes the workflow easier to control.",
+      "content": [
+        "Inputs can come from topics, notes or documents",
+        "AI produces structured presentation data",
+        "A deterministic renderer creates the PowerPoint",
+        "QA is isolated as its own review step"
+      ],
+      "visual": "Horizontal pipeline: Input → Skills → QA → JSON → PPTX",
+      "speaker_notes": "Explain why a modular workflow is easier to debug and extend.",
+      "sources": []
+    },
+    {
+      "id": "02",
+      "title": "Skills define behavior while workflows define order",
+      "key_message": "Reusable skills keep presentation quality rules independent from orchestration.",
+      "content": [
+        "Research skill builds an evidence map",
+        "Presentation skill creates storyline and slides",
+        "Document skill compresses long-form material",
+        "QA skill detects structural and content problems"
+      ],
+      "visual": "Four modular skill cards connected to an orchestration layer",
+      "speaker_notes": "Emphasize the separation between capability definitions and execution flow.",
+      "sources": []
+    },
+    {
+      "id": "03",
+      "title": "Structured JSON is the contract between AI and PowerPoint",
+      "key_message": "The model does not directly manipulate slides; it produces validated structured data.",
+      "content": [
+        "Predictable fields for every slide",
+        "Validation before rendering",
+        "Renderer can be replaced without changing prompts",
+        "Model can be replaced without changing PPTX code"
+      ],
+      "visual": "JSON object in the center with AI on the left and PPTX on the right",
+      "speaker_notes": "Describe the JSON schema as an interface contract.",
+      "sources": []
+    },
+    {
+      "id": "04",
+      "title": "The demo runs without a paid AI API",
+      "key_message": "A deterministic demo proves the renderer independently of any model provider.",
+      "content": [
+        "python app.py --demo",
+        "Validates the sample JSON",
+        "Generates a native .pptx file",
+        "Local Ollama mode can be enabled separately"
+      ],
+      "visual": "Terminal command flowing into a generated PowerPoint file",
+      "speaker_notes": "The demo is intentionally API-free so the repository remains easy to test.",
+      "sources": []
+    },
+    {
+      "id": "05",
+      "title": "Local AI keeps the architecture provider-independent",
+      "key_message": "Ollama can generate the presentation JSON locally while the rest of the pipeline stays unchanged.",
+      "content": [
+        "Local model receives the presentation skill",
+        "JSON-only response is requested",
+        "Schema validation catches malformed output",
+        "The same renderer produces the final deck"
+      ],
+      "visual": "Ollama → JSON validator → PPTX renderer",
+      "speaker_notes": "Mention that model quality varies and production systems should add retries and stronger validation.",
+      "sources": []
+    },
+    {
+      "id": "06",
+      "title": "The next extension is richer document ingestion",
+      "key_message": "The architecture already defines where PDF, DOCX and URL adapters plug into the pipeline.",
+      "content": [
+        "PDF text and table extraction",
+        "DOCX section-aware parsing",
+        "URL content normalization",
+        "Source-level citation tracking"
+      ],
+      "visual": "Three input adapters converging into one normalized evidence object",
+      "speaker_notes": "Be explicit that these adapters are roadmap items rather than completed v1 features.",
+      "sources": []
+    }
+  ]
+}

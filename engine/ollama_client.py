@@ -8,7 +8,16 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 def _request_json(model: str, prompt: str):
     response = requests.post(
         OLLAMA_URL,
-        json={"model": model, "prompt": prompt, "stream": False, "format": "json"},
+        json={
+    "model": model,
+    "prompt": prompt,
+    "stream": False,
+    "format": "json",
+    "options": {
+        "num_predict": 1200,
+        "temperature": 0.2,
+    },
+},
         timeout=300,
     )
     response.raise_for_status()
@@ -19,7 +28,12 @@ def _request_json(model: str, prompt: str):
 def generate_presentation(topic: str, model: str, slide_count: int, skill_text: str):
     prompt = f"""
 You are a presentation automation agent.
-
+IMPORTANT LANGUAGE RULE:
+The entire presentation must be written in Turkish.
+All titles, subtitles, slide titles, key messages, bullet points, visual directions, speaker notes, and all other generated text must be in Turkish.
+Do not use English words or sentences unless they are technical terms that are commonly used in Turkish.
+Use correct Turkish characters: ç, Ç, ğ, Ğ, ı, İ, ö, Ö, ş, Ş, ü, Ü.
+Never translate Turkish source material into English.
 Follow this skill specification:
 --- SKILL ---
 {skill_text}
@@ -67,7 +81,13 @@ def generate_presentation_from_document(
 
     prompt = f"""
 You are a document-to-presentation automation agent.
-
+IMPORTANT LANGUAGE RULE:
+The entire presentation must be written in Turkish.
+All titles, subtitles, slide titles, key messages, bullet points, visual directions, speaker notes, and all other generated text must be in Turkish.
+Do not use English words or sentences unless they are technical terms that are commonly used in Turkish.
+Use correct Turkish characters: ç, Ç, ğ, Ğ, ı, İ, ö, Ö, ş, Ş, ü, Ü.
+Never translate Turkish source material into English.
+If the source material is Turkish, preserve its language and terminology.
 DOCUMENT SKILL:
 ---
 {document_skill}
@@ -80,6 +100,9 @@ PRESENTATION SKILL:
 
 Source document: {source_name}
 Requested slide count: {slide_count}
+STRICT SLIDE COUNT RULE:
+You MUST generate exactly {slide_count} slides in the "slides" array.
+Do not generate fewer or more slides than requested.
 Input truncated because of local context limit: {str(truncated).lower()}
 
 SOURCE MATERIAL:
@@ -87,9 +110,10 @@ SOURCE MATERIAL:
 {material}
 --- END SOURCE MATERIAL ---
 
-First analyze the source using the Document Skill, then create the presentation using the Presentation Skill.
-Do not invent facts that are absent from the source. Preserve uncertainty and limitations.
-For traceability, use the source filename in each relevant slide's sources array.
+Önce kaynak içeriği Document Skill kullanarak analiz et, ardından Presentation Skill kullanarak sunumu oluştur.
+Kaynakta bulunmayan hiçbir bilgiyi uydurma. Belirsizlikleri ve sınırlamaları koru.
+Kaynak izlenebilirliği için ilgili her slaytın sources alanında kaynak dosyanın adını kullan.
+Sunumun kullanıcıya görünen TÜM içeriğini Türkçe üret. İngilizce başlık, açıklama, madde veya görsel yönlendirme üretme.
 
 Return ONLY valid JSON with this exact top-level shape:
 {{

@@ -26,7 +26,7 @@ def main():
     source.add_argument("--topic", type=str, help="Generate a presentation with a local Ollama model")
     source.add_argument("--pdf", type=str, help="Generate a presentation from a PDF using Ollama")
     source.add_argument("--docx", type=str, help="Generate a presentation from a DOCX using Ollama")
-    parser.add_argument("--model", type=str, default="llama3.2")
+    parser.add_argument("--model", type=str, default="qwen2.5:7b")
     parser.add_argument("--slides", type=int, default=8)
     parser.add_argument("--output", type=str, default="output/presentation.pptx")
     args = parser.parse_args()

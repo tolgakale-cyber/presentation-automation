@@ -25,157 +25,156 @@ footer{margin-top:90px;padding-top:30px;border-top:1px solid var(--line);color:v
 <body>
 <main>
 <header>
-<div class="eyebrow">AI ORCHESTRATION PROJECT · v1.0</div>
+<div class="eyebrow">AI ORKESTRASYON PROJESİ · v1.0</div>
 <h1>Yapay Zeka Destekli Sunum ve Doküman Otomasyonu</h1>
-<p class="lead">Araştırma, doküman ve yapılandırılmış girdileri; yeniden kullanılabilir AI skill'leri, workflow'lar ve deterministik bir PPTX engine üzerinden sunuma hazır çıktılara dönüştüren modüler otomasyon sistemi.</p>
-<span class="tag">LOCAL-FIRST · MODÜLER · PPTX OUTPUT</span>
+<p class="lead">Araştırma, doküman ve yapılandırılmış girdileri; yeniden kullanılabilir AI skill'leri, workflow'lar ve deterministik bir PPTX motoru üzerinden sunuma hazır çıktılara dönüştüren modüler otomasyon sistemi.</p>
+<span class="tag">YEREL ÖNCELİKLİ · MODÜLER · PPTX ÇIKTISI</span>
 </header>
 
 <section>
-<div class="section-head"><div class="num">01</div><div><h2>Projeye Genel Bakış</h2><p>Proje, uzun araştırma ve doküman içeriklerinden sunum üretirken ortaya çıkan tekrar eden işleri ayrı katmanlara bölerek yönetilebilir bir pipeline oluşturmayı amaçlar.</p></div></div>
+<div class="section-head"><div class="num">01</div><div><h2>Projeye Genel Bakış</h2><p>Proje, uzun araştırma ve doküman içeriklerinden sunum üretirken ortaya çıkan tekrar eden işleri ayrı katmanlara bölerek yönetilebilir bir iş akışı oluşturmayı amaçlar.</p></div></div>
 <div class="grid">
 <div class="card"><h3>Problem</h3><p>Araştırma çıktısını doğrudan bir LLM'e verip “sunum hazırla” demek; anlatı, kaynak takibi, içerik yoğunluğu ve çıktı biçimi üzerinde sınırlı kontrol sağlar.</p></div>
-<div class="card"><h3>Yaklaşım</h3><p>Araştırma, doküman analizi, sunum tasarımı, QA ve PPTX rendering görevleri birbirinden ayrılır. Katmanlar ortak bir JSON contract üzerinden haberleşir.</p></div>
+<div class="card"><h3>Yaklaşım</h3><p>Araştırma, doküman analizi, sunum tasarımı, QA ve PPTX rendering görevleri birbirinden ayrılır. Katmanlar ortak bir JSON veri sözleşmesi üzerinden haberleşir.</p></div>
 <div class="card"><h3>Amaç</h3><p>Model sağlayıcısından bağımsız, geliştirilebilir ve tekrar kullanılabilir bir sunum otomasyon temeli oluşturmak.</p></div>
-<div class="card"><h3>Çıktı</h3><p>Doğrulanmış Presentation JSON, speaker notes, visual direction ve düzenlenebilir native PowerPoint (.pptx) dosyası.</p></div>
+<div class="card"><h3>Çıktı</h3><p>Doğrulanmış Sunum JSON'u, konuşmacı notları, görsel yönlendirme ve düzenlenebilir PowerPoint (.pptx) dosyası.</p></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">02</div><div><h2>Sistem Mimarisi</h2><p>AI üretimi ile dosya üretimi birbirinden ayrılır. Böylece model değişse bile PPTX engine aynı kalabilir; renderer değişse bile skill mantığı korunabilir.</p></div></div>
-<div class="flow"><pre>TOPIC / URL / PDF / DOCX / NOTES
+<div class="section-head"><div class="num">02</div><div><h2>Sistem Mimarisi</h2><p>AI üretimi ile dosya üretimi birbirinden ayrılır. Böylece model değişse bile PPTX motoru aynı kalabilir; renderer değişse bile skill mantığı korunabilir.</p></div></div>
+<div class="flow"><pre>KONU / URL / PDF / DOCX / NOTLAR
                 │
                 ▼
-       INGESTION / RESEARCH
+       VERİ ALMA / ARAŞTIRMA
                 │
                 ▼
-          EVIDENCE MAP
+          KANIT HARİTASI
                 │
                 ▼
-       PRESENTATION SKILL
+       SUNUM SKILL'İ
                 │
                 ▼
-        SLIDE ARCHITECTURE
+        SLAYT MİMARİSİ
                 │
                 ▼
-           QA / CRITIC
+           QA / ELEŞTİRİ
                 │
                 ▼
-       PRESENTATION JSON
+       SUNUM JSON
                 │
                 ▼
-      VALIDATOR → PPTX ENGINE
+      DOĞRULAMA → PPTX MOTORU
                 │
                 ▼
-        NATIVE POWERPOINT</pre></div>
+        DÜZENLENEBİLİR POWERPOINT</pre></div>
 </section>
 
 <section>
 <div class="section-head"><div class="num">03</div><div><h2>Yapay Zeka Skill'leri</h2><p>Tek bir dev prompt yerine, farklı sorumluluklara sahip yeniden kullanılabilir skill tanımları kullanılır.</p></div></div>
 <div class="grid">
-<div class="card"><h3>Research Skill</h3><p>Kaynakları toplar, iddiaları ayırır, belirsizlikleri işaretler ve sunum için bir evidence map oluşturur.</p></div>
-<div class="card"><h3>Document Skill</h3><p>Uzun dokümanları bölümlere ayırır; tez, kanıt, sayı ve sınırlamaları sunum girdisine dönüştürür.</p></div>
-<div class="card"><h3>Presentation Skill</h3><p>Storyline, slide architecture, içerik yoğunluğu, visual direction ve speaker notes kurallarını uygular.</p></div>
-<div class="card"><h3>Presentation QA Skill</h3><p>Netlik, tekrar, kanıt, yoğunluk, anlatı akışı ve sonuç uyumunu üretimden ayrı bir adımda kontrol eder.</p></div>
+<div class="card"><h3>Araştırma Skill'i</h3><p>Kaynakları toplar, iddiaları ayırır, belirsizlikleri işaretler ve sunum için bir evidence map oluşturur.</p></div>
+<div class="card"><h3>Doküman Skill'i</h3><p>Uzun dokümanları bölümlere ayırır; tez, kanıt, sayı ve sınırlamaları sunum girdisine dönüştürür.</p></div>
+<div class="card"><h3>Sunum Skill'i</h3><p>Anlatı Kurgusu, slide architecture, içerik yoğunluğu, visual direction ve speaker notes kurallarını uygular.</p></div>
+<div class="card"><h3>Sunum QA Skill'i</h3><p>Netlik, tekrar, kanıt, yoğunluk, anlatı akışı ve sonuç uyumunu üretimden ayrı bir adımda kontrol eder.</p></div>
 </div>
 </section>
 
 <section>
 <div class="section-head"><div class="num">04</div><div><h2>AI Orkestrasyonu</h2><p>Skill'ler birbirinin yerine geçmez; her biri kendi çıktısını bir sonraki aşamanın girdisine dönüştürür.</p></div></div>
 <div class="arch">
-<div class="node"><strong>Research / Document</strong><br><span class="small">kanıt ve içerik çıkarımı</span></div><div class="arrow">→</div>
-<div class="node"><strong>Presentation</strong><br><span class="small">anlatı ve slayt planı</span></div><div class="arrow">→</div>
+<div class="node"><strong>Araştırma / Doküman</strong><br><span class="small">kanıt ve içerik çıkarımı</span></div><div class="arrow">→</div>
+<div class="node"><strong>Sunum</strong><br><span class="small">anlatı ve slayt planı</span></div><div class="arrow">→</div>
 <div class="node"><strong>QA</strong><br><span class="small">kontrol ve iyileştirme</span></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">05</div><div><h2>Automation Workflow'ları</h2><p>Aynı skill katmanları farklı giriş tipleri ve kullanım senaryoları için yeniden birleştirilebilir.</p></div></div>
+<div class="section-head"><div class="num">05</div><div><h2>Otomasyon Workflow'ları</h2><p>Aynı skill katmanları farklı giriş tipleri ve kullanım senaryoları için yeniden birleştirilebilir.</p></div></div>
 <div class="grid three">
-<div class="card"><h3>Research → Presentation</h3><p>Brief → Research → Evidence Map → Presentation Skill → QA → PPTX.</p></div>
-<div class="card"><h3>Document → Presentation</h3><p>PDF/DOCX → extraction adapter → Document Skill → Presentation Skill → QA → PPTX.</p></div>
-<div class="card"><h3>Presentation → Improvement</h3><p>Mevcut yapılandırılmış sunum → QA → issue list → revision → yeniden export.</p></div>
+<div class="card"><h3>Araştırma → Sunum</h3><p>Brief → Araştırma → Kanıt Haritası → Sunum Skill'i → QA → PPTX.</p></div>
+<div class="card"><h3>Doküman → Sunum</h3><p>PDF/DOCX → veri çıkarma adaptörü → Doküman Skill'i → Sunum Skill'i → QA → PPTX.</p></div>
+<div class="card"><h3>Sunum → İyileştirme</h3><p>Mevcut yapılandırılmış sunum → QA → sorun listesi → revizyon → yeniden dışa aktarma.</p></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">06</div><div><h2>Presentation Skill</h2><p>Sunum üretimini yalnızca metin yazımı olarak değil, bir bilgi mimarisi problemi olarak ele alır.</p></div></div>
+<div class="section-head"><div class="num">06</div><div><h2>Sunum Skill'i</h2><p>Sunum üretimini yalnızca metin yazımı olarak değil, bir bilgi mimarisi problemi olarak ele alır.</p></div></div>
 <div class="grid">
-<div class="card"><h3>Storyline</h3><p>Sunumun ana sorusunu, başlangıç noktasını, kanıt zincirini ve sonucu belirler.</p></div>
-<div class="card"><h3>Slide Architecture</h3><p>Her slayta tek bir görev ve ana mesaj atar; gereksiz tekrarları azaltır.</p></div>
-<div class="card"><h3>Content Density</h3><p>Uzun paragrafları slayta taşımak yerine taranabilir, konuşmayı destekleyen içerik üretir.</p></div>
-<div class="card"><h3>Visual Direction</h3><p>Diagram, timeline, comparison, chart veya process gibi görsel anlatım biçimini içerikle eşleştirir.</p></div>
-<div class="card"><h3>Speaker Notes</h3><p>Slaytta görünmesi gerekmeyen anlatım detaylarını konuşmacı notlarına ayırır.</p></div>
-<div class="card"><h3>Source Traceability</h3><p>Önemli iddiaların kaynaklarla ilişkilendirilebilmesi için slide-level source alanını korur.</p></div>
+<div class="card"><h3>Anlatı Kurgusu</h3><p>Sunumun ana sorusunu, başlangıç noktasını, kanıt zincirini ve sonucu belirler.</p></div>
+<div class="card"><h3>Slayt Mimarisi</h3><p>Her slayta tek bir görev ve ana mesaj atar; gereksiz tekrarları azaltır.</p></div>
+<div class="card"><h3>İçerik Yoğunluğu</h3><p>Uzun paragrafları slayta taşımak yerine taranabilir, konuşmayı destekleyen içerik üretir.</p></div>
+<div class="card"><h3>Görsel Yönlendirme</h3><p>Diyagram, zaman çizelgesi, karşılaştırma, grafik veya süreç gibi görsel anlatım biçimlerini içerikle eşleştirir.</p></div>
+<div class="card"><h3>Konuşmacı Notları</h3><p>Slaytta görünmesi gerekmeyen anlatım detaylarını konuşmacı notlarına ayırır.</p></div>
+<div class="card"><h3>Kaynak İzlenebilirliği</h3><p>Önemli iddiaların kaynaklarla ilişkilendirilebilmesi için slayt düzeyindeki kaynak alanını korur.</p></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">07</div><div><h2>Yapılandırılmış Çıktı</h2><p>LLM doğrudan PowerPoint dosyasını manipüle etmez. Önce belirlenmiş schema'ya uygun Presentation JSON üretir.</p></div></div>
+<div class="section-head"><div class="num">07</div><div><h2>Yapılandırılmış Çıktı</h2><p>LLM doğrudan PowerPoint dosyasını işlemez. Önce belirlenmiş JSON Schema'ya uygun Sunum JSON'u üretir.</p></div></div>
 <div class="code">{
   "id": "03",
-  "title": "Structured JSON, AI ile PowerPoint arasındaki contract'tır",
+  "title": "Yapılandırılmış JSON, AI ile PowerPoint arasındaki veri sözleşmesidir",
   "key_message": "Model ve renderer birbirinden bağımsız tutulur.",
-  "content": ["Predictable slide fields", "Validation before rendering"],
-  "visual": "AI → JSON → Validator → PPTX",
+  "content": ["Öngörülebilir slayt alanları", "Rendering öncesi doğrulama"],
+  "visual": "AI → JSON → Doğrulama → PPTX",
   "speaker_notes": "...",
   "sources": []
 }</div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">08</div><div><h2>PowerPoint Üretim Motoru</h2><p>Python ve python-pptx ile Presentation JSON, düzenlenebilir native .pptx dosyasına dönüştürülür.</p></div></div>
+<div class="section-head"><div class="num">08</div><div><h2>PowerPoint Üretim Motoru</h2><p>Python ve python-pptx ile Sunum JSON'u, düzenlenebilir .pptx dosyasına dönüştürülür.</p></div></div>
 <div class="grid">
-<div class="card"><div class="kpi">JSON → PPTX</div><p>Renderer; cover, slide başlıkları, içerik blokları, visual direction ve speaker notes alanlarını işler.</p></div>
-<div class="card"><div class="kpi">Validation</div><p>JSON Schema katmanı, rendering başlamadan önce beklenen alanların ve veri yapısının kontrol edilmesini sağlar.</p></div>
+<div class="card"><div class="kpi">JSON → PPTX</div><p>Renderer; kapak, slayt başlıkları, içerik blokları, görsel yönlendirme ve konuşmacı notlarını işler.</p></div>
+<div class="card"><div class="kpi">Doğrulama</div><p>JSON Schema katmanı, rendering başlamadan önce beklenen alanları ve veri yapısını doğrular.</p></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">09</div><div><h2>Local AI</h2><p>v1, Ollama için başlangıç entegrasyonu içerir. Böylece ücretli bir AI API zorunlu olmadan yerel bir modelden Presentation JSON istenebilir.</p></div></div>
+<div class="section-head"><div class="num">09</div><div><h2>Yerel AI</h2><p>v1, Ollama için başlangıç entegrasyonu içerir. Böylece ücretli bir AI API zorunlu olmadan yerel bir modelden Sunum JSON'u istenebilir.</p></div></div>
 <div class="flow"><pre>OLLAMA
    │
    ▼
-LOCAL LLM
-   │  + Presentation Skill
+YEREL LLM
+   │  + Sunum Skill'i
    ▼
-PRESENTATION JSON
+SUNUM JSON
    │
    ▼
-JSON SCHEMA VALIDATION
+JSON SCHEMA DOĞRULAMA
    │
    ▼
-PPTX ENGINE</pre></div>
-<p class="small" style="margin-top:14px">Not: Çıktı kalitesi kullanılan local model'e bağlıdır. Production kullanımında retry, daha güçlü validation ve kaynak doğrulama katmanları eklenmelidir.</p>
+PPTX MOTORU</pre></div>
+<p class="small" style="margin-top:14px">Not: Çıktı kalitesi kullanılan local model'e bağlıdır. Üretim ortamında yeniden deneme, daha güçlü validation ve kaynak doğrulama katmanları eklenmelidir.</p>
 </section>
 
 <section>
 <div class="section-head"><div class="num">10</div><div><h2>Demo ve Çıktılar</h2><p>Repository, ücretli API gerektirmeden PPTX engine'i test eden deterministik bir demo içerir.</p></div></div>
-<div class="card"><h3>Demo komutu</h3><div class="code">pip install -r requirements.txt
-python app.py --demo</div><p>Bu işlem örnek Presentation JSON'u doğrular ve native PowerPoint dosyası üretir. Örnek .pptx dosyası repository'nin <span class="accent">examples/</span> klasöründe bulunur.</p></div>
+<div class="card"><h3>Demo komutu</h3><div class="code">pip install -r requirements.txt<br>python app.py --demo</div><p>Bu işlem örnek Sunum JSON'unu doğrular ve düzenlenebilir PowerPoint dosyası üretir. Örnek .pptx dosyası repository'nin <span class="accent">examples/</span> klasöründe bulunur.</p></div>
 </section>
 
 <section>
 <div class="section-head"><div class="num">11</div><div><h2>Teknoloji Katmanı</h2><p>Proje mümkün olduğunca küçük ve değiştirilebilir bileşenlerle tasarlanmıştır.</p></div></div>
 <div class="grid three">
-<div class="card"><h3>Python</h3><p>Orkestrasyon ve export katmanı.</p></div>
-<div class="card"><h3>python-pptx</h3><p>Native PowerPoint rendering.</p></div>
-<div class="card"><h3>JSON Schema</h3><p>AI çıktısının contract ve validation katmanı.</p></div>
-<div class="card"><h3>Ollama</h3><p>Local LLM entegrasyonu.</p></div>
-<div class="card"><h3>Markdown Skills</h3><p>Yeniden kullanılabilir AI davranış tanımları.</p></div>
-<div class="card"><h3>GitHub Pages</h3><p>Teknik case study ve proje dokümantasyonu.</p></div>
+<div class="card"><h3>Python</h3><p>Orkestrasyon ve dışa aktarma katmanı.</p></div>
+<div class="card"><h3>python-pptx</h3><p>Düzenlenebilir PowerPoint oluşturma.</p></div>
+<div class="card"><h3>JSON Schema</h3><p>AI çıktısının veri sözleşmesi ve doğrulama katmanı.</p></div>
+<div class="card"><h3>Ollama</h3><p>Yerel LLM entegrasyonu.</p></div>
+<div class="card"><h3>Markdown Skill'leri</h3><p>Yeniden kullanılabilir AI davranış tanımları.</p></div>
+<div class="card"><h3>GitHub Pages</h3><p>Teknik proje incelemesi ve dokümantasyonu.</p></div>
 </div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">12</div><div><h2>Mevcut Durum ve Roadmap</h2><p>v1 çalışan PPTX renderer, JSON validation, modular skill yapısı ve Ollama starter içerir. PDF/DOCX/URL ingestion adapter'ları mimaride tanımlanmıştır ancak henüz v1'in tamamlanmış özellikleri olarak sunulmamaktadır.</p></div></div>
+<div class="section-head"><div class="num">12</div><div><h2>Mevcut Durum ve Yol Haritası</h2><p>v1; çalışan PPTX renderer, JSON validation, modüler skill yapısı ve Ollama başlangıç entegrasyonu içerir. PDF/DOCX/URL veri alma adaptörleri mimaride tanımlanmıştır ancak henüz v1'in tamamlanmış özellikleri olarak sunulmamaktadır.</p></div></div>
 <div class="grid">
-<div class="card"><h3>v1 · Tamamlananlar</h3><ul><li>Presentation / Research / Document / QA skill'leri</li><li>Workflow tanımları</li><li>Presentation JSON Schema</li><li>Çalışan PPTX renderer</li><li>API'siz demo</li><li>Ollama starter</li></ul></div>
-<div class="card"><h3>Sonraki Adımlar</h3><ul><li>PDF ve DOCX extraction adapter'ları</li><li>URL ingestion ve source tracking</li><li>QA revision loop</li><li>Template / brand system</li><li>Benchmark ve ölçülebilir zaman karşılaştırması</li></ul></div>
+<div class="card"><h3>v1 · Tamamlananlar</h3><ul><li>Presentation / Araştırma / Doküman / QA skill'leri</li><li>Workflow tanımları</li><li>Sunum JSON Schema</li><li>Çalışan PPTX renderer</li><li>API gerektirmeyen demo</li><li>Ollama başlangıç entegrasyonu</li></ul></div>
+<div class="card"><h3>Sonraki Adımlar</h3><ul><li>PDF ve DOCX veri çıkarma adaptörleri</li><li>URL veri alma ve kaynak takibi</li><li>QA revizyon döngüsü</li><li>Şablon / marka sistemi</li><li>Benchmark ve ölçülebilir zaman karşılaştırması</li></ul></div>
 </div>
 </section>
 
-<footer>AI Presentation &amp; Document Automation · v1.0 · Türkçe teknik case study</footer>
+<footer>Yapay Zeka Destekli Sunum ve Doküman Otomasyonu · v1.0 · Türkçe teknik proje incelemesi</footer>
 </main>
 </body>
 </html>

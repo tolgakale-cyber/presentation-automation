@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated output
+output/
+
+# Local test files
+test-sunum-otomasyonu.pdf
+
+# Environment
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

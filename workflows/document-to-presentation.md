@@ -1,19 +1,19 @@
 # Document → Presentation
 
 ```text
-PDF / DOCX / Notes
-       ↓
+PDF / DOCX
+    ↓
 Document extraction adapter
-       ↓
+    ↓
 Document Skill
-       ↓
-Evidence / summary map
-       ↓
+    ↓
 Presentation Skill
-       ↓
-QA
-       ↓
-PPTX
+    ↓
+Presentation JSON
+    ↓
+JSON Schema validation
+    ↓
+PPTX renderer
 ```
 
-v1 contains the skill and orchestration contract. File-format extraction adapters are the next extension.
+Implemented in v1.1 for text-based PDF and DOCX inputs. PDF extraction uses `pypdf`; DOCX extraction uses `python-docx`. Scanned/image-only PDFs require OCR and are not supported yet. URL ingestion and the automatic QA revision loop remain separate next steps.

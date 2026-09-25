@@ -34,6 +34,7 @@ Topic / URL / PDF / DOCX / Notes
 - Modular AI skills
 - Research → presentation workflow
 - Document → presentation workflow
+- Working PDF and DOCX text extraction adapters
 - Presentation QA workflow
 - JSON presentation contract
 - Working PPTX renderer
@@ -68,9 +69,20 @@ python app.py --topic "AI agents in enterprise workflows" --model llama3.2
 
 The local model is asked to return presentation JSON following the project's schema. The result is validated and rendered to PPTX.
 
+## Document → presentation
+
+PDF and DOCX inputs can now be extracted locally and passed to the Document Skill + Presentation Skill through Ollama:
+
+```bash
+python app.py --pdf "report.pdf" --model llama3.2 --slides 8
+python app.py --docx "report.docx" --model llama3.2 --slides 8
+```
+
+Use `--output output/custom-name.pptx` to choose the generated file path. Text-based PDFs are supported; scanned/image-only PDFs require OCR, which is not included yet.
+
 ## Important
 
-This repository is an automation foundation and working renderer, not a claim that every input format is fully parsed in v1. PDF/DOCX ingestion adapters are represented in the workflow and are intended as the next extension.
+PDF/DOCX ingestion is implemented. URL ingestion and the automatic QA revision loop remain planned extensions.
 
 ## Project structure
 

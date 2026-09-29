@@ -28,8 +28,7 @@ footer{margin-top:90px;padding-top:30px;border-top:1px solid var(--line);color:v
 <header>
 <div class="eyebrow">AI ORKESTRASYON PROJESİ · v1.0</div>
 <h1>Yapay Zeka Destekli Sunum ve Doküman Otomasyonu</h1>
-<p class="lead">Araştırma, doküman ve yapılandırılmış girdileri; yeniden kullanılabilir AI skill'leri, workflow'lar ve deterministik bir PPTX motoru üzerinden sunuma hazır çıktılara dönüştüren modüler otomasyon sistemi.</p>
-<span class="tag">YEREL ÖNCELİKLİ · MODÜLER · PPTX ÇIKTISI</span>
+<p class="lead">Yapılandırılmış araştırma girdilerini; yeniden kullanılabilir AI skill'leri, workflow'lar, JSON doğrulama ve deterministik bir PPTX motoru üzerinden düzenlenebilir PowerPoint çıktısına dönüştüren modüler otomasyon sistemi.</p><span class="tag">YEREL ÖNCELİKLİ · MODÜLER · PPTX ÇIKTISI</span>
 <br><a class="github-btn" href="https://github.com/tolgakale-cyber/presentation-automation" target="_blank" rel="noopener noreferrer">GitHub'da İncele →</a>
 </header>
 
@@ -45,7 +44,7 @@ footer{margin-top:90px;padding-top:30px;border-top:1px solid var(--line);color:v
 
 <section>
 <div class="section-head"><div class="num">02</div><div><h2>Sistem Mimarisi</h2><p>AI üretimi ile dosya üretimi birbirinden ayrılır. Böylece model değişse bile PPTX motoru aynı kalabilir; renderer değişse bile skill mantığı korunabilir.</p></div></div>
-<div class="flow"><pre>KONU / URL / PDF / DOCX / NOTLAR
+<div class="flow"><pre>YAPILANDIRILMIŞ GİRDİ / ARAŞTIRMA
                 │
                 ▼
        VERİ ALMA / ARAŞTIRMA
@@ -87,7 +86,7 @@ footer{margin-top:90px;padding-top:30px;border-top:1px solid var(--line);color:v
 <div class="arch">
 <div class="node"><strong>Araştırma / Doküman</strong><br><span class="small">kanıt ve içerik çıkarımı</span></div><div class="arrow">→</div>
 <div class="node"><strong>Sunum</strong><br><span class="small">anlatı ve slayt planı</span></div><div class="arrow">→</div>
-<div class="node"><strong>QA</strong><br><span class="small">kontrol ve iyileştirme</span></div>
+<div class="node"><strong>QA</strong><br><span class="small">kalite güvencesi · kontrol ve iyileştirme</span></div>
 </div>
 </section>
 
@@ -95,7 +94,7 @@ footer{margin-top:90px;padding-top:30px;border-top:1px solid var(--line);color:v
 <div class="section-head"><div class="num">05</div><div><h2>Otomasyon Workflow'ları</h2><p>Aynı skill katmanları farklı giriş tipleri ve kullanım senaryoları için yeniden birleştirilebilir.</p></div></div>
 <div class="grid three">
 <div class="card"><h3>Araştırma → Sunum</h3><p>Brief → Araştırma → Kanıt Haritası → Sunum Skill'i → QA → PPTX.</p></div>
-<div class="card"><h3>Doküman → Sunum</h3><p>PDF/DOCX → veri çıkarma adaptörü → Doküman Skill'i → Sunum Skill'i → QA → PPTX.</p></div>
+<div class="card"><h3>Planlanan: Doküman → Sunum</h3><p>PDF/DOCX → veri çıkarma adaptörü → Doküman Skill'i → Sunum Skill'i → QA → PPTX.</p></div>
 <div class="card"><h3>Sunum → İyileştirme</h3><p>Mevcut yapılandırılmış sunum → QA → sorun listesi → revizyon → yeniden dışa aktarma.</p></div>
 </div>
 </section>
@@ -169,10 +168,10 @@ PPTX MOTORU</pre></div>
 </section>
 
 <section>
-<div class="section-head"><div class="num">12</div><div><h2>Mevcut Durum ve Yol Haritası</h2><p>v1; çalışan PPTX renderer, JSON validation, modüler skill yapısı ve Ollama başlangıç entegrasyonu içerir. PDF/DOCX/URL veri alma adaptörleri mimaride tanımlanmıştır ancak henüz v1'in tamamlanmış özellikleri olarak sunulmamaktadır.</p></div></div>
+<div class="section-head"><div class="num">12</div><div><h2>Proje Durumu</h2><p>v1, çalışan bir PPTX renderer, JSON doğrulama, modüler skill yapısı ve Ollama başlangıç entegrasyonunu içerir. Genişletilebilir veri alma ve gelişmiş QA (Quality Assurance / Kalite Güvencesi) özellikleri sonraki sürümler için planlanmıştır.</p></div></div>
 <div class="grid">
-<div class="card"><h3>v1 · Tamamlananlar</h3><ul><li>Presentation / Araştırma / Doküman / QA skill'leri</li><li>Workflow tanımları</li><li>Sunum JSON Schema</li><li>Çalışan PPTX renderer</li><li>API gerektirmeyen demo</li><li>Ollama başlangıç entegrasyonu</li></ul></div>
-<div class="card"><h3>Sonraki Adımlar</h3><ul><li>PDF ve DOCX veri çıkarma adaptörleri</li><li>URL veri alma ve kaynak takibi</li><li>QA revizyon döngüsü</li><li>Şablon / marka sistemi</li><li>Benchmark ve ölçülebilir zaman karşılaştırması</li></ul></div>
+<div class="card"><h3>v1 · Çalışan Bileşenler</h3><ul><li>Presentation / Araştırma / Doküman / QA skill'leri</li><li>Workflow tanımları</li><li>Sunum JSON Schema</li><li>Çalışan PPTX renderer</li><li>API gerektirmeyen demo</li><li>Ollama başlangıç entegrasyonu</li></ul></div>
+<div class="card"><h3>Geliştirme Kapsamı</h3><ul><li>PDF / DOCX veri çıkarma adaptörleri</li><li>URL veri alma ve kaynak takibi</li><li>QA revizyon döngüsü</li><li>Şablon / marka sistemi</li><li>Benchmark ve ölçülebilir performans karşılaştırmaları</li></ul></div>
 </div>
 </section>
 

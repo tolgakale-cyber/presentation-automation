@@ -5,7 +5,7 @@ Research, documents and structured inputs are transformed into presentation-read
 ## Architecture
 
 ```text
-Topic / URL / PDF / DOCX / Notes
+Topic / PDF / DOCX / Notes
               |
               v
         Ingestion Layer

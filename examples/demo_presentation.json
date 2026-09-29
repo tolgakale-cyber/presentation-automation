@@ -1,91 +1,91 @@
 {
-  "title": "From Prompt to Presentation",
-  "subtitle": "A modular AI workflow for turning raw inputs into meeting-ready decks",
-  "audience": "Technical and business stakeholders",
-  "goal": "Demonstrate the presentation automation architecture",
+  "title": "Prompt'tan Sunuma",
+  "subtitle": "Ham girdileri sunuma hazır çıktılara dönüştüren modüler yapay zeka iş akışı",
+  "audience": "Teknik ve iş paydaşları",
+  "goal": "Sunum otomasyonu mimarisini göstermek",
   "slides": [
     {
       "id": "01",
-      "title": "Presentation work is a pipeline, not a single prompt",
-      "key_message": "Separating research, narrative, QA and rendering makes the workflow easier to control.",
+      "title": "Sunum üretimi tek bir prompt değil, bir iş akışıdır",
+      "key_message": "Araştırma, anlatı, kalite güvencesi ve PPTX üretimini ayrı aşamalara bölmek iş akışını daha kontrol edilebilir hale getirir.",
       "content": [
-        "Inputs can come from topics, notes or documents",
-        "AI produces structured presentation data",
-        "A deterministic renderer creates the PowerPoint",
-        "QA is isolated as its own review step"
+        "Girdiler konu, not veya yapılandırılmış verilerden gelebilir",
+        "Yapay zeka yapılandırılmış sunum verisi üretir",
+        "Deterministik PPTX motoru düzenlenebilir PowerPoint dosyasını oluşturur",
+        "QA (Kalite Güvencesi) ayrı bir kontrol adımı olarak çalışır"
       ],
-      "visual": "Horizontal pipeline: Input → Skills → QA → JSON → PPTX",
-      "speaker_notes": "Explain why a modular workflow is easier to debug and extend.",
+      "visual": "Yatay iş akışı: Girdi → Skill'ler → QA → JSON → PPTX",
+      "speaker_notes": "Modüler bir iş akışının hata ayıklamayı ve sistemi geliştirmeyi neden kolaylaştırdığını açıklayın.",
       "sources": []
     },
     {
       "id": "02",
-      "title": "Skills define behavior while workflows define order",
-      "key_message": "Reusable skills keep presentation quality rules independent from orchestration.",
+      "title": "Skill'ler görevleri, workflow'lar çalışma sırasını tanımlar",
+      "key_message": "Yeniden kullanılabilir skill'ler sunum üretim kurallarını orkestrasyon mantığından bağımsız tutar.",
       "content": [
-        "Research skill builds an evidence map",
-        "Presentation skill creates storyline and slides",
-        "Document skill compresses long-form material",
-        "QA skill detects structural and content problems"
+        "Araştırma Skill'i bir kanıt haritası oluşturur",
+        "Sunum Skill'i anlatı yapısını ve slaytları oluşturur",
+        "Doküman Skill'i uzun içerikleri yapılandırılmış sunum girdisine dönüştürür",
+        "QA Skill'i yapısal ve içerik sorunlarını tespit eder"
       ],
-      "visual": "Four modular skill cards connected to an orchestration layer",
-      "speaker_notes": "Emphasize the separation between capability definitions and execution flow.",
+      "visual": "Orkestrasyon katmanına bağlı dört modüler skill kartı",
+      "speaker_notes": "Skill tanımları ile yürütme akışının birbirinden ayrılmasının önemini vurgulayın.",
       "sources": []
     },
     {
       "id": "03",
-      "title": "Structured JSON is the contract between AI and PowerPoint",
-      "key_message": "The model does not directly manipulate slides; it produces validated structured data.",
+      "title": "Yapılandırılmış JSON, yapay zeka ile PowerPoint arasındaki sözleşmedir",
+      "key_message": "Model slaytları doğrudan değiştirmez; doğrulanabilir ve yapılandırılmış veri üretir.",
       "content": [
-        "Predictable fields for every slide",
-        "Validation before rendering",
-        "Renderer can be replaced without changing prompts",
-        "Model can be replaced without changing PPTX code"
+        "Her slayt için öngörülebilir alanlar kullanılır",
+        "PPTX üretiminden önce JSON doğrulaması yapılır",
+        "Prompt'lar değiştirilmeden PPTX motoru geliştirilebilir",
+        "PPTX kodu değiştirilmeden model sağlayıcısı değiştirilebilir"
       ],
-      "visual": "JSON object in the center with AI on the left and PPTX on the right",
-      "speaker_notes": "Describe the JSON schema as an interface contract.",
+      "visual": "Yapay zeka → Yapılandırılmış JSON → PPTX",
+      "speaker_notes": "JSON Schema'nın sistem bileşenleri arasında bir veri sözleşmesi görevi gördüğünü açıklayın.",
       "sources": []
     },
     {
       "id": "04",
-      "title": "The demo runs without a paid AI API",
-      "key_message": "A deterministic demo proves the renderer independently of any model provider.",
+      "title": "Demo, ücretli bir yapay zeka API'si olmadan çalışır",
+      "key_message": "Deterministik demo, PPTX motorunun herhangi bir yapay zeka sağlayıcısına ihtiyaç duymadan çalışabildiğini gösterir.",
       "content": [
-        "python app.py --demo",
-        "Validates the sample JSON",
-        "Generates a native .pptx file",
-        "Local Ollama mode can be enabled separately"
+        "python app.py --demo komutu çalıştırılır",
+        "Örnek sunum JSON'u doğrulanır",
+        "Düzenlenebilir bir .pptx dosyası oluşturulur",
+        "Yerel Ollama modeli ayrı olarak etkinleştirilebilir"
       ],
-      "visual": "Terminal command flowing into a generated PowerPoint file",
-      "speaker_notes": "The demo is intentionally API-free so the repository remains easy to test.",
+      "visual": "Demo akışı: Komut → JSON doğrulama → düzenlenebilir PPTX",
+      "speaker_notes": "Deponun kolayca test edilebilmesi için demonun ücretli bir yapay zeka API'sine ihtiyaç duymadığını açıklayın.",
       "sources": []
     },
     {
       "id": "05",
-      "title": "Local AI keeps the architecture provider-independent",
-      "key_message": "Ollama can generate the presentation JSON locally while the rest of the pipeline stays unchanged.",
+      "title": "Yerel yapay zeka, mimariyi model sağlayıcısından bağımsız tutar",
+      "key_message": "Ollama sunum JSON'unu yerel olarak üretirken iş akışının geri kalanı aynı şekilde çalışmaya devam eder.",
       "content": [
-        "Local model receives the presentation skill",
-        "JSON-only response is requested",
-        "Schema validation catches malformed output",
-        "The same renderer produces the final deck"
+        "Yerel model Sunum Skill'ini kullanır",
+        "Modelden yalnızca yapılandırılmış JSON çıktısı istenir",
+        "Şema doğrulaması hatalı çıktıları yakalar",
+        "Aynı PPTX motoru nihai PowerPoint dosyasını üretir"
       ],
-      "visual": "Ollama → JSON validator → PPTX renderer",
-      "speaker_notes": "Mention that model quality varies and production systems should add retries and stronger validation.",
+      "visual": "Ollama → JSON doğrulayıcı → PPTX motoru",
+      "speaker_notes": "Model çıktısının değişebileceğini ve doğrulama katmanının bu nedenle önemli olduğunu açıklayın.",
       "sources": []
     },
     {
       "id": "06",
-      "title": "The next extension is richer document ingestion",
-      "key_message": "The architecture already defines where PDF, DOCX and URL adapters plug into the pipeline.",
+      "title": "Sonraki geliştirme alanı: daha zengin doküman girdileri",
+      "key_message": "Mimari, gelecekte PDF, DOCX ve URL adaptörlerinin iş akışına eklenebileceği şekilde genişletilebilir olarak tasarlanmıştır.",
       "content": [
-        "PDF text and table extraction",
-        "DOCX section-aware parsing",
-        "URL content normalization",
-        "Source-level citation tracking"
+        "Planlanan PDF metin ve tablo çıkarma adaptörü",
+        "Planlanan DOCX bölüm bazlı ayrıştırma adaptörü",
+        "Planlanan URL içerik normalizasyonu ve kaynak takibi",
+        "Planlanan kaynak düzeyinde atıf takibi"
       ],
-      "visual": "Three input adapters converging into one normalized evidence object",
-      "speaker_notes": "Be explicit that these adapters are roadmap items rather than completed v1 features.",
+      "visual": "Planlanan girdiler: PDF + DOCX + URL → normalize edilmiş kanıt verisi",
+      "speaker_notes": "Bu adaptörlerin tamamlanmış v1 özellikleri değil, sonraki geliştirme adımları olduğunu özellikle belirtin.",
       "sources": []
     }
   ]
